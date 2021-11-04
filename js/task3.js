@@ -1,12 +1,33 @@
 'use strict';
 
-let a = -6;
-let b = 5;
+const products = [{
+        id: 3,
+        price: 200,
+    },
+    {
+        id: 4,
+        price: 900,
+    },
+    {
+        id: 1,
+        price: 1000,
+    },
+];
 
-if (a >= 0 && b >= 0 ){
-    alert(`Разность a и b равна  ${a - b}`)
-} else if(a < 0 && b < 0) {
-    alert(`Произведение a и b равно ${a * b}`)
-} else {
-    alert(`Cумма a и b равна ${a + b}`)
-}
+
+// first way 
+
+// function discount(product){
+//     product.price = product.price - product.price * 0.15
+// }
+
+// products.forEach(discount, products);
+
+// second way 
+products.forEach(product => {
+    product.price = product.price - product.price * 0.15
+})
+
+console.log(products)
+
+

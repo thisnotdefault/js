@@ -1,28 +1,36 @@
-'use strict'
+'use strict';
 
-function sumTwoNumbers(a, b) {
-    return a + b
-}
+const products = [{
+        id: 3,
+        price: 127,
+        photos: [
+            "1.jpg",
+            "2.jpg",
+        ]
+    },
+    {
+        id: 5,
+        price: 499,
+        photos: []
+    },
+    {
+        id: 10,
+        price: 26,
+        photos: [
+            "3.jpg"
+        ]
+    },
+    {
+        id: 8,
+        price: 78,
+    },
+];
 
-function diffTwoNumbers(a, b) {
-    return a - b
-}
+let photos = products.filter(product => "photos" in product && product.photos.length > 0)
+console.log(photos)
 
-function divTwoNumbers(a, b) {
-    return a / b
-}
+products.sort(function(product1,product2){
+    return product1.price - product2.price
+})
 
-function mulTwoNumbers(a, b) {
-    return a * b
-}
-
-
-
-let first = 5;
-let second = 2;
-
-alert(sumTwoNumbers(first, second))
-alert(diffTwoNumbers(first, second))
-alert(divTwoNumbers(first, second))
-alert(mulTwoNumbers(first, second))
-
+console.log(products)
